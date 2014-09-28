@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/claudetech/grunt-html-glob",
   "dependencies": {
-    "glob-html": "^0.1.5"
+    "glob-html": "^0.1.6"
   }
 }

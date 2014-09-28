@@ -5,9 +5,9 @@ module.exports = (grunt) ->
     done = @async()
     options = this.options(
       concat: false
-      minimify: false
-      minimifyCss: false
-      minimifyJs: false
+      minify: false
+      minifyCss: false
+      minifyJs: false
       overwrite: true
       tempPath: '/tmp/'
       tidy: true
@@ -16,11 +16,15 @@ module.exports = (grunt) ->
       cssPrefix: 'css'
     )
 
-    this.files.forEach (f) ->
+    return done() if @files.length == 0
+
+    count = 0
+    @files.forEach (f) =>
       src = f.src?[0]
       return unless src?
-      globHtml.processFile src, options, (err) ->
+      globHtml.processFile src, options, (err) =>
         if err?
           grunt.log.error "Failed to compile: #{err}"
           grunt.fail.warn "glob task failed"
-        done()
+        count += 1
+        done() if count == @files.length
