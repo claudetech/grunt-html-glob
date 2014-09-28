@@ -1,6 +1,6 @@
 {
   "name": "grunt-html-glob",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Task to expand or concatenate globbed expressions",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/claudetech/grunt-html-glob",
   "dependencies": {
-    "glob-html": "^0.1.6"
+    "glob-html": "^0.1.7",
+    "lodash": "^2.4.1"
   }
 }

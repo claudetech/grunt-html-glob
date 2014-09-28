@@ -1,14 +1,14 @@
 globHtml = require 'glob-html'
+_        = require 'lodash'
 
 module.exports = (grunt) ->
   grunt.registerMultiTask 'glob', 'Expand or concatenate globbed files', ->
     done = @async()
-    options = this.options(
+    baseOptions = this.options(
       concat: false
       minify: false
       minifyCss: false
       minifyJs: false
-      overwrite: true
       tempPath: '/tmp/'
       tidy: true
       group: 'application'
@@ -22,6 +22,7 @@ module.exports = (grunt) ->
     @files.forEach (f) =>
       src = f.src?[0]
       return unless src?
+      options = _.extend({output: f.dest}, baseOptions)
       globHtml.processFile src, options, (err) =>
         if err?
           grunt.log.error "Failed to compile: #{err}"
