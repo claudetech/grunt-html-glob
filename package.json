@@ -1,0 +1,26 @@
+{
+  "name": "grunt-html-glob",
+  "version": "0.1.0",
+  "description": "Task to expand or concatenate globbed expressions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/claudetech/grunt-html-glob"
+  },
+  "keywords": [
+    "gruntplugin",
+    "glob"
+  ],
+  "author": "Daniel Perez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/claudetech/grunt-html-glob/issues"
+  },
+  "homepage": "https://github.com/claudetech/grunt-html-glob",
+  "dependencies": {
+    "glob-html": "^0.1.5"
+  }
+}
